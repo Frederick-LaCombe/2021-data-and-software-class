@@ -16,7 +16,7 @@ def test_process_data():
     function_output = plotting.process_data(input_data)
     expected_output = np.array([[0,32,273],[1,212,373]])
     
-    assert(false)
+    assert(np.all(function_output == expected_output))
 
 def test_read_data():
     input_file = "110-tavg-12-12-1950-2020.csv"
