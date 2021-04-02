@@ -22,10 +22,10 @@ def test_read_data():
     input_file = "110-tavg-12-12-1950-2020.csv"
     data_directory = os.path.realpath(os.path.join(os.path.dirname(__file__),"..","data"))
     input_filename = os.path.join(data_directory,input_file)
-    temperature_data = plotting.read_data(input_filename, starting_row=5)
+    temperature_data = plotting.read_data(input_filename, starting_row=0)
 
-    assert(temperature_data.shape == (0,0))
-    assert(temperature_data[0,1] == 0.0)
+    assert(temperature_data.shape == (71,3))
+    assert(temperature_data[0,1] == 51.39)
 
 def test_plot_data():
     plot_file = "test_plot_data.pdf"
@@ -39,7 +39,7 @@ def test_plot_data():
         
     plotting.plot_data(input_data, plot_filename)
 
-    assert false
+    assert (os.path.exists(plot_filename))
 
 def test_convert_data():
     input_file = "110-tavg-12-12-1950-2020.csv"
